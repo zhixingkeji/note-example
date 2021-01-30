@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: xmlns:>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.active{
+			color: aqua;
+		}
+	</style>
+	<script src="vue.js"></script>
+</head>
+<body>
+<ul id="app">
+	<li v-for="(item,index) in movies"
+	    :class= "{active: current===index}"
+	    @click='onclick(index)'>
+		{{index}}.{{item}}
+	</li>
+</ul>
+
+
+	<script>
+		let app = new Vue({
+			el: "#app",
+			data:{
+
+				movies:['海绵宝宝','派大星','蟹老板'],
+				current: 0
+			},
+			methods:{
+				onclick(index){
+					this.current = index;
+
+				}
+			}
+
+		});
+	</script>
+</body>
+</html>
