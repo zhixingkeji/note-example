@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换登录</title>
+
+</head>
+
+<body>
+<div id="app">
+      <span v-if = "isSure">
+         <label for="userPhone">用户账号</label>
+         <input type="text" id="userPhone" placeholder="手机号登录">
+
+      </span>
+    <span v-else>
+         <label for="userEmail">邮箱账号</label>
+         <input type="text" id="userEmail" placeholder="邮箱登录">
+
+      </span>
+    <button @click="isSure = !isSure">切换登录方式</button>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            isSure:true
+        },
+        methods:{
+
+        }
+
+    })
+</script>
+</body>
+</html>
