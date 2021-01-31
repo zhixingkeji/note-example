@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东顶部导航栏</title>
+	<!--引入图标字体表-->
+	<link rel="stylesheet" href="../source/fontawesome/css/all.css">
+	<!--引入css样式重置表-->
+	<link rel="stylesheet" href="../source/reset.css">
+
+	<style>
+
+		body{
+			font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+
+		}
+
+		.clearfix::before,
+		.clearfix::after{
+			content:"";
+			display: table;
+			clear: both;
+		}
+
+		.outermenu{
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+			background-color: #E3E4E5;
+			border-bottom:1px #ddd;
+			border-top:1px #ddd;
+		}
+
+		.innermenu{
+			width: 1190px;
+			margin: 0 auto;
+
+		}
+
+		.leftcot{
+			float: left;
+
+		}
+
+		.rightcot{
+			float:right;
+
+		}
+
+		.rightcot li{
+			float: left;
+
+		}
+
+		.innermenu a,
+		.innermenu span,
+		.innermenu i{
+			color: #999;
+			text-decoration: none;
+		}
+
+		.innermenu a:hover,
+		.innermenu .leftcot i,
+		.rightcot .hightlig{
+			color: #f10125;
+		}
+
+		.rightcot .linestyle{
+			width: 1px;
+			height: 10px;
+			background-color: #999;
+			margin: 10px 12px 0px;
+
+		}
+
+		.innermenu i{
+			margin-left: 2px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<!--创建外部的容器-->
+	<div class="outermenu">
+		<!--创建内部的容器-->
+		<div class="innermenu clearfix">
+			<!--创建左侧的容器-->
+			<div class="leftcot">
+				<div class="curent_city">
+					<i class="fas fa-map-marker-alt"></i>
+					<a href="javascript:;">北京</a>
+				</div>
+			</div>
+
+			<!--创建右侧的容器-->
+			<ul class="rightcot">
+				<!--注册登录-->
+				<li>
+					<a href="javascript:;">你好，请登录</a>
+					<a class="hightlig" href="javascript:;">免费注册</a>
+				</li>
+
+				<!--我的订单-->
+				<li class="linestyle"></li>
+				<li>
+					<a href="javascript:;">我的订单</a>
+				</li>
+
+				<!--我的京东-->
+				<li class="linestyle"></li>
+				<li>
+					<a href="javascript:;">我的京东</a>
+					<i class="fas fa-angle-down"></i>
+				</li>
+
+				<!--京东会员-->
+				<li class="linestyle"></li>
+				<li>
+					<a href="javascript:;">京东会员</a>
+				</li>
+
+				<!--企业采购-->
+				<li class="linestyle"></li>
+				<li>
+					<a class="hightlig" href="javascript:;">企业采购</a>
+					<i class="fas fa-angle-down"></i>
+				</li>
+
+				<!--客户服务-->
+				<li class="linestyle"></li>
+				<li>
+					<span href="javascript:;">客户服务</span>
+					<i class="fas fa-angle-down"></i>
+				</li>
+
+				<!--网站导航-->
+				<li class="linestyle"></li>
+				<li>
+					<span href="javascript:;">网站导航</span>
+					<i class="fas fa-angle-down"></i>
+				</li>
+
+				<!--手机京东-->
+				<li class="linestyle"></li>
+				<li>
+					<span href="javascript:;">手机京东</span>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+</body>
+</html>
