@@ -51,11 +51,9 @@ const app = new Vue({
 
 	computed:{
 		totalPrice(){
-			let totalPrice = 0;
-			for(let i =0; i<this.books.length; i++){
-				totalPrice += this.books[i].price * this.books[i].count
-			}
-			return totalPrice;
+			return this.books.reduce(function (pre,book){
+				return pre + book.price * book.count
+			},0)
 		}
 
 	},
