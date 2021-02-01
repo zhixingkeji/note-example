@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="../../vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<cpn2></cpn2>
+</div>
+
+
+<script>
+	//构造子组件
+	const c1 = Vue.extend({
+		template: `<div>我是子组件</div>`
+	})
+
+	//构造父组件
+	const c2 = Vue.extend({
+		template: `
+			<div>我是父组件<cpn1></cpn1></div>
+		`,
+		components:{
+			//注册子组件
+			cpn1: c1
+		}
+		
+	})
+
+	const app = new Vue({
+		el: "#app",
+		data:{
+		},
+		components:{
+			//注册父组件
+			cpn2: c2
+		}
+	});
+</script>
+</body>
+</html>

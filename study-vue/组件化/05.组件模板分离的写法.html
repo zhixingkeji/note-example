@@ -7,26 +7,18 @@
 </head>
 <body>
 <div id="app">
-	<mycpn></mycpn>
-	<mycpn></mycpn>
-	<mycpn></mycpn>
-	<mycpn></mycpn>
+	<cpn1></cpn1>
+	<cpn2></cpn2>
 </div>
 
 
 <script>
-	//1.组件构造
-	const cpnC = Vue.extend({
+	//语法糖构造并注册全局组件
+	Vue.component('cpn1',{
 		template: `
-			<div>
-			<h2>我是h2标题</h2>
-			<p>我是p标签</p>
-			</div>
+			<div>我是全局组件的语法糖</div>
 		`
 	})
-
-	//2.注册组件
-	Vue.component('mycpn',cpnC)
 
 
 	const app = new Vue({
@@ -34,6 +26,14 @@
 		data:{
 
 		},
+		components:{
+			//注册局部组件
+			cpn2: {
+				template: `
+				<div>我是局部组件的语法糖</div>
+				`
+			}
+		}
 
 
 	});
