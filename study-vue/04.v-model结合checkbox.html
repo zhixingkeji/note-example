@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: xmlns:>
+<head>
+	<meta charset="UTF-8">
+	<title>v-model结合checkbox</title>
+	<style>
+	</style>
+	<script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<!--	单选框-->
+	<label for="agreement">是否同意协议
+		<input type="checkbox" id="agreement" v-model="isAgress">
+	</label>
+	<h2>你选择的是：{{isAgress}}</h2>
+	<button :disabled="!isAgress">下一步</button>
+
+	<!--	复选框-->
+	<input type="checkbox" value="篮球" v-model="hobbies">篮球
+	<input type="checkbox" value="足球" v-model="hobbies">足球
+	<input type="checkbox" value="羽毛球" v-model="hobbies">羽毛球
+	<input type="checkbox" value="乒乓球" v-model="hobbies">乒乓球
+	<h2>你得到爱好是：{{hobbies}}</h2>
+
+
+</div>
+
+
+
+
+
+
+<script>
+	const app = new Vue({
+		el: "#app",
+		data:{
+			isAgress: false,
+			hobbies: []
+		},
+
+
+	});
+</script>
+</body>
+</html>

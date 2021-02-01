@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: xmlns:>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+	</style>
+	<script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+	//单选
+	<select name="f1" v-model="fruit">
+		<option value="苹果">苹果</option>
+		<option value="香蕉">香蕉</option>
+		<option value="葡萄">葡萄</option>
+		<option value="榴莲">榴莲</option>
+	</select>
+
+	<h2>你选择的水果是： {{fruit}}</h2>
+
+	//多选
+	<select name="f2" v-model="classes" multiple>
+		<option value="数学">数学</option>
+		<option value="语文">语文</option>
+		<option value="英语">英语</option>
+		<option value="编程">编程</option>
+	</select>
+	<h2>你选择的水果是： {{classes}}</h2>
+</div>
+
+
+<script>
+	const app = new Vue({
+		el: "#app",
+		data:{
+			fruit: '香蕉',
+			classes: []
+		},
+
+
+	});
+</script>
+</body>
+</html>
