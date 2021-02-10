@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: xmlns:>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="../../vue.js"></script>
+</head>
+<body>
+<div id="app">
+<!--	因为不是浏览器的事件，所以没有event参数。-->
+<!--	但是会自动传入子组件中定义过的发射函数中的item-->
+	<cpn  @itemclick="cpnclick"></cpn>
+
+
+</div>
+
+
+<template id='tt'>
+	<div>
+		<button v-for="item in categories"
+				@click="btnclick(item)">
+			{{item.name}}
+		</button>
+	</div>
+</template>
+<script>
+
+	const cpn={
+		template: id='#tt',
+		data(){
+			return{
+				categories: [
+					{id: 'a', name: '热门推荐'},
+					{id: 'b', name: '手机数码'},
+					{id: 'c', name: '家用电器'},
+					{id: 'd', name: '电脑办公'},
+				]
+			}
+		},
+
+		methods: {
+			btnclick(item){
+				this.$emit('itemclick',item)
+			}
+		}
+	}
+
+
+	const app = new Vue({
+		el: "#app",
+		data: {
+			fmessage: '父传子用props',
+			fmovies: ['电影1','电影2','电影3','电影4','电影5']
+		},
+		components: {
+			//cpn: cpn  键值同名的简写方法
+			cpn
+		},
+		methods: {
+			cpnclick(item){
+				console.log('cpnclick',item);
+			}
+		}
+	});
+</script>
+</body>
+</html>

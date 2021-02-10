@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: xmlns:>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="../../vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<div>
+		<cpn></cpn>
+		<cpn ref="r1"></cpn>
+		<cpn></cpn>
+		<button @click="btnclick">按钮</button>
+	</div>
+</div>
+
+
+<template id='t1'>
+	<div>我是子组件</div>
+</template>
+<script>
+	const app = new Vue({
+		el: "#app",
+		data: {
+		},
+		components: {
+			cpn: {
+				template: id='#t1',
+				data(){
+					return{
+						name: '我是子组件的name'
+					}
+				},
+				methods: {
+					show(){
+						console.log('showMessage')
+					}
+				}
+			}
+		},
+		methods: {
+			btnclick(){
+				console.log(this.$refs.r1.name);
+				console.log(this.$refs.r1.show());
+			}
+		}
+	});
+</script>
+</body>
+</html>

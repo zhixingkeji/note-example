@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: xmlns:>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="../../vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<cpn  :s-Message="fmessage"  :smovies="fmovies" ></cpn>
+
+
+</div>
+
+
+<template id='tt'>
+	<div>
+		<h2>{{sMessage}}</h2>
+		<ul v-for="item in smovies">
+			<li>{{item}}</li>
+		</ul>
+	</div>
+</template>
+<script>
+
+	const cpn={
+		props:{
+			sMessage: String,
+			smovies: {
+				//类型验证
+				type: String,
+				//默认值
+				default: '默认值',
+				//该参数是否为必传
+				required: true
+			},
+		},
+		template: id='#tt'
+	}
+
+
+	const app = new Vue({
+		el: "#app",
+		data: {
+			fmessage: '父传子用props',
+			fmovies: ['电影1','电影2','电影3','电影4','电影5']
+		},
+		components: {
+			//cpn: cpn  键值同名的简写方法
+			cpn
+		}
+	});
+</script>
+</body>
+</html>

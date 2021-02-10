@@ -6,37 +6,38 @@
 	<script src="../../vue.js"></script>
 </head>
 <body>
-<div id="app">
-	<cpn1></cpn1>
-	<cpn2></cpn2>
-</div>
+	<div id="app">
+		<cpn1></cpn1>
+		<cpn2></cpn2>
+	</div>
+
+	<script type="text/x-template" id="t1">
+		<div>我是通过script标签的模板</div>
+	</script>
+	<template id='t2'>
+		<div>是通过template标签的模板</div>
+	</template>
+	<script>
+
+		Vue.component('cpn1',{
+			template: id='#t1'
+		})
 
 
-<script>
-	//语法糖构造并注册全局组件
-	Vue.component('cpn1',{
-		template: `
-			<div>我是全局组件的语法糖</div>
-		`
-	})
+		const app = new Vue({
+			el: "#app",
+			data:{
 
-
-	const app = new Vue({
-		el: "#app",
-		data:{
-
-		},
-		components:{
-			//注册局部组件
-			cpn2: {
-				template: `
-				<div>我是局部组件的语法糖</div>
-				`
+			},
+			components:{
+				//注册局部组件
+				cpn2: {
+					template: id='#t2'
+				}
 			}
-		}
 
 
-	});
-</script>
+		});
+	</script>
 </body>
 </html>
